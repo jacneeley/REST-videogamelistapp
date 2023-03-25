@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         viewGames.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent next = new Intent(MainActivity.this, thing.class);
+                Intent next = new Intent(MainActivity.this, GamesActivity.class);
                 startActivity(next);
             }
         });
