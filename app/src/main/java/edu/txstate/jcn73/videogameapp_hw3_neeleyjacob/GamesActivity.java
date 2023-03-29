@@ -3,18 +3,26 @@ package edu.txstate.jcn73.videogameapp_hw3_neeleyjacob;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class GamesActivity extends ListActivity {
     ArrayList<Games> gamesList;
-    double avgRating;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         gamesList = new ArrayList<Games>();
 
         //list of data object
@@ -85,10 +93,30 @@ public class GamesActivity extends ListActivity {
                 R.id.txtGameBasic,
                 gamesList
         ));
+    }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Games selectedGame = gamesList.get(position);
+        TextView gameBasic = findViewById(R.id.txtGameBasic);
+        gameBasic.setText("ID: " + String.valueOf(selectedGame.getId()) +" Title: " + String.valueOf(selectedGame.getName()));
 
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(GamesActivity.this);
+        SharedPreferences.Editor editor = pref.edit();
 
+        editor.putInt("KEY_ID",selectedGame.getId());
+        editor.putString("KEY_NAME", selectedGame.getName());
+        editor.putFloat("KEY_PRICE", (float) selectedGame.getPrice());
+        editor.putInt("KEY_R1", selectedGame.getRating1());
+        editor.putInt("KEY_R2", selectedGame.getRating2());
+        editor.putInt("KEY_R3", selectedGame.getRating3());
+        editor.putInt("KEY_R4", selectedGame.getRating4());
+        editor.putInt("KEY_R5", selectedGame.getRating5());
+        editor.putString("KEY_URL",selectedGame.getUrl());
+        editor.commit();
 
-
+        Intent next = new Intent(GamesActivity.this, SelectedGame.class);
+        startActivity(next);
     }
 }
