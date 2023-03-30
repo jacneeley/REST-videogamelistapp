@@ -41,6 +41,7 @@ public class SelectedGame extends AppCompatActivity {
         TextView starFive = findViewById(R.id.txt5Star);
         Button info = findViewById(R.id.btnGameInfo);
         Button calcRating = findViewById(R.id.btnCalcAvg);
+        TextView averageRating = findViewById(R.id.txtAvgRating);
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(SelectedGame.this);
         id = pref.getInt("KEY_ID",0);
@@ -54,10 +55,10 @@ public class SelectedGame extends AppCompatActivity {
         url = pref.getString("KEY_URL","");
 
         //display
-        DecimalFormat fmtPrice = new DecimalFormat("###,###.##");
+        DecimalFormat fmt = new DecimalFormat("###,###.##");
         gameId.setText(String.valueOf("Game ID: "+id));
         gameName.setText(name);
-        gamePrice.setText("Price: "+String.valueOf(fmtPrice.format(price)));
+        gamePrice.setText("Price: "+String.valueOf(fmt.format(price)));
         starOne.setText(String.valueOf("1 Stars: "+oneStar));
         starTwo.setText(String.valueOf("2 Stars: "+twoStar));
         starThree.setText(String.valueOf("3 Stars: "+threeStar));
@@ -76,6 +77,11 @@ public class SelectedGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //average calculation
+                avgRating = (Double.valueOf(oneStar *1 + twoStar*2+threeStar*3+fourStar*4+fiveStar*5))/(
+                        Double.valueOf(oneStar + twoStar + threeStar+ fourStar + fiveStar));
+                averageRating.setText("Average User Score: "+String.valueOf(fmt.format(avgRating)));
+
+
             }
         });
     }
