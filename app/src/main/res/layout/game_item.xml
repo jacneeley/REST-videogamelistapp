@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/txtGameBasic"
-        android:layout_width="385dp"
-        android:layout_height="187dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:drawableLeft="@drawable/controller"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
