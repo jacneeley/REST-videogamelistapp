@@ -17,8 +17,6 @@ import java.util.ArrayList;
 
 public class GamesActivity extends ListActivity {
     ArrayList<Games> gamesList;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,8 +97,6 @@ public class GamesActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Games selectedGame = gamesList.get(position);
-        TextView gameBasic = findViewById(R.id.txtGameBasic);
-        gameBasic.setText("ID: " + String.valueOf(selectedGame.getId()) +" Title: " + String.valueOf(selectedGame.getName()));
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(GamesActivity.this);
         SharedPreferences.Editor editor = pref.edit();

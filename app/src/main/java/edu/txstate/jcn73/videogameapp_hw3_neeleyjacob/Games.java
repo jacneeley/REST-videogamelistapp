@@ -1,5 +1,7 @@
 package edu.txstate.jcn73.videogameapp_hw3_neeleyjacob;
 
+import androidx.annotation.NonNull;
+
 public class Games {
     private int id;
     private String name;
@@ -83,4 +85,9 @@ public class Games {
         this.url = url;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return id + " " + name;
+    }
 }
