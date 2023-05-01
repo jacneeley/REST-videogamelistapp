@@ -1,5 +1,6 @@
 # videogamelistapp
 - Simple android app that uses listviews to display different class objects.
+- GET request is made to a firebase real time database, PUT requests are made to update prices in the database.
 - This repo contains Java and XML files only.
 
 ## Screens
