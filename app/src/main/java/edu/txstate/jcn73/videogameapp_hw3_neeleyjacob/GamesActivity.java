@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class GamesActivity extends ListActivity {
-    public String API_URL = "https://androidstudiodemo-93279-default-rtdb.firebaseio.com/games.json";
+    public String API_URL = "some_url";
     ArrayList<Games> gamesList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
