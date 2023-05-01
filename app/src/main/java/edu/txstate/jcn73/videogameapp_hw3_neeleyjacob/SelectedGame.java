@@ -72,7 +72,7 @@ public class SelectedGame extends AppCompatActivity {
         fourStar = pref.getInt("KEY_R4", 0);
         fiveStar = pref.getInt("KEY_R5", 0);
         url = pref.getString("KEY_URL","");
-        api_url = "https://androidstudiodemo-93279-default-rtdb.firebaseio.com/games/" + position + ".json";
+        api_url = "some_url" + position + ".json";
         DecimalFormat fmt = new DecimalFormat("###,###.##");
 
         info.setOnClickListener(new View.OnClickListener() {
