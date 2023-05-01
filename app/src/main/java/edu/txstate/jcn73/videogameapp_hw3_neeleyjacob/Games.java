@@ -88,6 +88,6 @@ public class Games {
     @NonNull
     @Override
     public String toString() {
-        return id + " " + name;
+        return "GameID: " + id + " " + "Title: "+name;
     }
 }

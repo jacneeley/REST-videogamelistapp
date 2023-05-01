@@ -10,9 +10,9 @@
         android:id="@+id/txt3Star"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt2Star" />
 
@@ -31,9 +31,9 @@
         android:id="@+id/txtID"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
@@ -41,9 +41,9 @@
         android:id="@+id/txtGamePrice"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtID" />
 
@@ -51,29 +51,29 @@
         android:id="@+id/txt1Star"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGamePrice" />
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@+id/txtID"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <TextView
         android:id="@+id/txt2Star"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@+id/txtGamePrice"
         app:layout_constraintTop_toBottomOf="@+id/txt1Star" />
 
     <TextView
         android:id="@+id/txt4Star"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt3Star" />
 
@@ -81,9 +81,9 @@
         android:id="@+id/txt5Star"
         android:layout_width="130dp"
         android:layout_height="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt4Star" />
 
@@ -91,17 +91,18 @@
         android:id="@+id/btnGameInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:text="Game Info"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt5Star" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUpdatePrice" />
 
     <Button
         android:id="@+id/btnCalcAvg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="Average Rating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,11 +110,36 @@
 
     <TextView
         android:id="@+id/txtAvgRating"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="130dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
         android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/txt3Star"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGamePrice" />
+
+    <Button
+        android:id="@+id/btnUpdatePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Update Price"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCalcAvg" />
+
+    <EditText
+        android:id="@+id/txtUpdatePrice"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:hint="Enter New Price"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAvgRating" />
 </androidx.constraintlayout.widget.ConstraintLayout>
